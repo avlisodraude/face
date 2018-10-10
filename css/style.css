@@ -1,0 +1,362 @@
+html,
+body {
+    background-color: #ffdf04;
+    background: url(../images/pattern.png) repeat 0 0;
+    background-size: 53px;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    padding-top: 0px;
+    box-sizing: border-box;
+    -webkit-animation: slide 2000s linear infinite;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+}
+
+@-webkit-keyframes slide {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100000px 0px;
+    }
+}
+
+a {
+    color: #000 !important;
+    text-decoration: none !important;
+
+}
+
+.block {
+    display: block;
+    width: 60%;
+    border: none;
+    background-color: #000;
+    color: white;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.blockred {
+    display: block;
+    width: 50%;
+    border: none;
+    color: #c4c4c4;
+    background-color: #fff;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    margin: 0 auto;
+    border-bottom: solid 2px #c4c4c4;
+}
+
+.blockred:hover {
+    display: block;
+    width: 50%;
+    border: none;
+    color: #ff3000;
+    background-color: #fff;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    margin: 0 auto;
+    border-bottom: solid 2px #ff3000;
+}
+
+.field:first-of-type {
+    margin-top: 50px;
+}
+
+.block:hover {
+    background-color: #ffdf04;
+    color: #000;
+}
+
+.blockred:hover {
+    background-color: #fff;
+    color: #ff3000;
+}
+
+.image {
+    border-radius: 100%;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    margin-bottom: 70px;
+
+}
+
+.image img {
+    border-radius: 100%;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    object-fit: cover;
+
+}
+
+.venster {
+
+    border: solid 1px #efefef;
+    margin: 0 auto;
+    padding: 40px;
+    width: 80%;
+    height: 80%;
+    vertical-align: center;
+    background-color: #ffffff;
+    font-family: sans-serif;
+    padding-bottom: 100px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0 10px 6px -6px #e3b000;
+    -moz-box-shadow: 0 10px 6px -6px #e3b000;
+    box-shadow: 0 10px 6px -6px #e3b000;
+
+    margin-top: 7%;
+    margin-bottom: 7%;
+}
+
+/*
+=====
+LEVEL 1. RESET STYLES
+=====
+*/
+
+.field {
+    --uiFieldPlaceholderColor: var(--fieldPlaceholderColor, #767676);
+}
+
+.field__input {
+    background-color: transparent;
+    border-radius: 0;
+    border: none;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    font-family: inherit;
+    font-size: 1em;
+}
+
+.a-field .field__input:focus {
+    outline: none;
+}
+
+.field__input:focus::-webkit-input-placeholder {
+    color: var(--uiFieldPlaceholderColor);
+    opacity: 0.6;
+}
+
+.field__input:focus::-moz-placeholder {
+    color: var(--uiFieldPlaceholderColor);
+    opacity: 0.6;
+}
+
+/*
+=====
+LEVEL 2. CORE STYLES
+=====
+*/
+
+.field {
+    display: inline-block;
+}
+
+.field__input {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/*
+=====
+LEVEL 3. PRESENTATION STYLES
+=====
+*/
+
+/* a-field */
+
+.a-field {
+    --uiFieldHeight: var(--fieldHeight, 50px);
+    --uiFieldBorderWidth: var(--fieldBorderWidth, 2px);
+    --uiFieldBorderColor: var(--fieldBorderColor);
+
+    --uiFieldFontSize: var(--fieldFontSize, 1.5em);
+    --uiFieldHintFontSize: var(--fieldHintFontSize, 0.6em);
+
+    --uiFieldPaddingRight: var(--fieldPaddingRight, 15px);
+    --uiFieldPaddingBottom: var(--fieldPaddingBottom, 25px);
+    --uiFieldPaddingLeft: var(--fieldPaddingLeft, 15px);
+
+    position: relative;
+    box-sizing: border-box;
+    font-size: var(--uiFieldFontSize);
+    padding-top: 2em;
+    width: 350px;
+}
+
+.a-field .field__input {
+    height: var(--uiFieldHeight);
+    padding: 0 var(--uiFieldPaddingRight) 0 var(--uiFieldPaddingLeft);
+    border-bottom: var(--uiFieldBorderWidth) solid var(--uiFieldBorderColor);
+}
+
+.a-field .field__input::-webkit-input-placeholder {
+    opacity: 0;
+    transition: opacity .2s ease-out;
+}
+
+.a-field .field__input::-moz-placeholder {
+    opacity: 0;
+    transition: opacity .2s ease-out;
+}
+
+.a-field .field__input:not(:placeholder-shown) ~ .field__label-wrap .field__label {
+    opacity: 0;
+    bottom: var(--uiFieldPaddingBottom);
+}
+
+.a-field .field__input:focus::-webkit-input-placeholder {
+    opacity: 0.6;
+    transition-delay: .2s;
+}
+
+.a-field .field__input:focus::-moz-placeholder {
+    opacity: 0.6;
+    transition-delay: .2s;
+}
+
+.a-field .field__label-wrap {
+    box-sizing: border-box;
+    width: 100%;
+    height: var(--uiFieldHeight);
+
+    pointer-events: none;
+    cursor: text;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.a-field .field__label {
+    position: absolute;
+    left: var(--uiFieldPaddingLeft);
+    bottom: calc(50% - .5em);
+
+    line-height: 1;
+    font-size: var(--uiFieldHintFontSize);
+
+    pointer-events: none;
+    transition: bottom .2s cubic-bezier(0.9, -0.15, 0.1, 1.15), opacity .2s ease-out;
+    will-change: bottom, opacity;
+}
+
+.a-field .field__input:focus ~ .field__label-wrap .field__label {
+    opacity: 0.4;
+    bottom: var(--uiFieldHeight);
+}
+
+/* a-field_a1 */
+
+.a-field_a1 .field__input {
+    transition: border-color .2s ease-out;
+    will-change: border-color;
+}
+
+.a-field_a1 .field__input:focus {
+    border-color: var(--fieldBorderColorActive);
+}
+
+/* a-field_a2 */
+
+.a-field_a2 .field__label-wrap:after {
+    content: "";
+    box-sizing: border-box;
+    width: 0;
+    height: var(--uiFieldBorderWidth);
+    background-color: var(--fieldBorderColorActive);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    will-change: width;
+    transition: width .285s ease-out;
+}
+
+.a-field_a2 .field__input:focus ~ .field__label-wrap:after {
+    width: 100%;
+}
+
+/* a-field_a3 */
+
+.a-field_a3 {
+    padding-top: 1.5em;
+}
+
+.a-field_a3 .field__label-wrap:after {
+    content: "";
+    box-sizing: border-box;
+    width: 100%;
+    height: 0;
+
+    opacity: 0;
+    border: var(--uiFieldBorderWidth) solid var(--fieldBorderColorActive);
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    will-change: opacity, height;
+    transition: height .2s ease-out, opacity .2s ease-out;
+}
+
+.a-field_a3 .field__input:focus ~ .field__label-wrap:after {
+    height: 100%;
+    opacity: 1;
+}
+
+.a-field_a3 .field__input:focus ~ .field__label-wrap .field__label {
+    bottom: calc(var(--uiFieldHeight) + .5em);
+}
+
+/*
+=====
+LEVEL 4. SETTINGS
+=====
+*/
+
+.field {
+    --fieldBorderColor: #c4c4c4;
+    --fieldBorderColorActive: #ffdf04;
+}
+
+video#cam, img#photo {
+    -webkit-border-radius: 6%;
+    -moz-border-radius: 6%;
+    border-radius: 6%;
+    position: relative;
+    margin: 0 auto;
+}
+img.snapIcon {
+    position: absolute;
+    left: 45%;
+}
+
+.photoContainer {
+    position: relative;
+}
+
+button#btnReloadCamera {
+    position: absolute;
+    right: 33%;
+}
+button#btnRemovePicture {
+    position: absolute;
+    right: 18%;
+}

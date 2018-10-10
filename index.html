@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="robots" content="noindex, nofollow"/>
+    <title>Project Space</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js"></script>
+</head>
+<body>
+
+<div class="venster">
+    <div id="image" class="image">
+        <a href="#" onclick="switchCamera('user');"><img src="/images/photo.jpg"></a>
+        <p><br>Klik op het foto-icoon en maak een selfie!</p>
+    </div>
+
+    <form enctype="multipart/form-data" method="post" action="">
+        <div class="photoContainer" style="width:100%">
+            <video id="cam" autoplay muted playsinline>Not available</video>
+            <canvas id="canvas" style="display:none"></canvas>
+            <img id="photo" alt="">
+            <button id="snapBtn" style="display: none;" onclick="takePicture();event.preventDefault();">
+                <img class="snapIcon" src="./images/photography.svg" alt="" width="55px" height="55px">
+            </button>
+            <button id="btnReloadCamera" style="display: none;" onclick="reloadCamera('user');event.preventDefault();">
+                <img class="reloadCameraStl" src="./images/re-shoot.svg" alt="" width="55px" height="55px">
+            </button>
+            <!--<button id="btnRemovePicture" style="display: none;" onclick="reloadCamera('user');;event.preventDefault();">-->
+                <!--<img class="removePicture" src="./images/removeIcon.svg" alt="" width="55px" height="55px">-->
+            <!--</button>-->
+        </div>
+
+        <label class="field a-field a-field_a1 page__field">
+            <input class="field__input" placeholder="&nbsp;" required>
+            <span class="field__label-wrap">
+        <span class="field__label">Voornaam</span>
+      </span>
+        </label>
+        <br>
+        <br><br><br><br>
+        <button id="send" value="submit" type="button" onclick="sendPicture();" class="block">Verstuur</button>
+        <br><br>
+        <button id="cancel" type="button" class="blockred">Annuleren</button>
+    </form>
+
+    <br>
+    <p style="float:left;margin-top:50px;font-size:1em"><a href="/privacy.html">Privacyverklaring</a></p>
+    <div style="float:right;margin-top:40px;width:115px;height:33px;background-size:contain;background-image:url(http://files.beeldengeluid.nl/huisstijl/download/logo/normaal/rgb/zwart/Beeld-en-Geluid_Zwart-RGB-000000.png)"></div>
+</div>
+
+</body>
+<script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+<link rel="script" href="/js/main.js">
+
+</html>
