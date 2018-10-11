@@ -76,32 +76,6 @@ function postData(url = '', data = {}) {
 }
 
 function sendPicture() {
-
-    var form = new FormData();
-    form.append("username", "Beeldengeluid");
-    form.append("password", "Jkf738%^dg");
-
-    var settings = {
-        "async": true,
-        "crossDomain": true,
-        "url": "http://3.120.127.207/api/login/",
-        "method": "POST",
-        "headers": {
-            "authorization": "Basic Og==",
-            "cache-control": "no-cache",
-            "postman-token": "5f976983-adc9-a1ae-51f3-500c4b3ed177"
-        },
-        "processData": false,
-        "contentType": false,
-        "mimeType": "multipart/form-data",
-        "data": form
-    };
-
-    $.ajax(settings).done(function (response) {
-        console.log(response);
-    });
-
-    return ;
     // var data = new FormData();
     // data.append("username", "Beeldengeluid");
     // data.append("password", "Jkf738%^dg");
@@ -133,10 +107,10 @@ function sendPicture() {
         headers: {
             "Content-Type": "application/json",
             "Access-Control-Allow-Origin": "*",
-            "cache-control": "no-cache",
+            "cache-control", "no-cache",
             "Accept": "application/json",
             "Authorization": "Basic Og==",
-            "postman-token": "44a260fc-db86-3ffc-ab77-e8229fa5e1b0"
+            "postman-token", "44a260fc-db86-3ffc-ab77-e8229fa5e1b0"
         },
         mode: 'no-cors',
         body: JSON.stringify({
