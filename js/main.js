@@ -76,55 +76,33 @@ function postData(url = '', data = {}) {
 }
 
 function sendPicture() {
-    // var data = new FormData();
-    // data.append("username", "Beeldengeluid");
-    // data.append("password", "Jkf738%^dg");
-    //
-    // var xhr = new XMLHttpRequest();
-    // xhr.withCredentials = true;
-    //
-    // xhr.addEventListener("readystatechange", function () {
-    //     if (this.readyState === 4) {
-    //         console.log(this.responseText);
-    //     }
-    // });
-    //
-    // xhr.open("POST", "http://3.120.127.207/api/login/");
-    // xhr.setRequestHeader("authorization", "Basic Og==");
-    // xhr.setRequestHeader("cache-control", "no-cache");
-    // xhr.setRequestHeader("postman-token", "44a260fc-db86-3ffc-ab77-e8229fa5e1b0");
-    //
-    // xhr.send(data);
-    // return;
+
 
     console.log('within postdata')
-    // Default options are marked with *
+    var form = new FormData();
+    form.append("username", "Beeldengeluid");
+    form.append("password", "Jkf738%^dg");
 
-    fetch('./serve.php',
-        {
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "http://3.120.127.207/api/login/",
+        "method": "POST",
+        "headers": {
+            "authorization": "Basic Og==",
+            "cache-control": "no-cache",
+            "postman-token": "9a7a1469-4b63-2054-56a1-1d301f545970"
+        },
+        "processData": false,
+        "contentType": false,
+        "mimeType": "multipart/form-data",
+        "data": form
+    }
 
-        // method: 'POST',
-        // credentials: 'include',
-        // headers: {
-        //     "Content-Type": "application/json",
-        //     "Access-Control-Allow-Origin": "*",
-        //     "cache-control": "no-cache",
-        //     "Accept": "application/json",
-        //     "Authorization": "Basic Og==",
-        //     "postman-token": "44a260fc-db86-3ffc-ab77-e8229fa5e1b0"
-        // },
-        // mode: 'no-cors',
-        // body: JSON.stringify({
-        //     username: 'Beeldengeluid',
-        //     password: 'Jkf738%^dg',
-        // })
-    }).then(res => console.log(res));
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+    });
 
-    return;
-    console.log('sending request/post', this);
-    postData('http://3.120.127.207/api/login/', {answer: 42})
-        .then(data => console.log(JSON.stringify(data))) // JSON-string from `response.json()` call
-        .catch(error => console.error(error));
 }
 
 
