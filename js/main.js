@@ -118,7 +118,7 @@ function sendPicture() {
         //     username: 'Beeldengeluid',
         //     password: 'Jkf738%^dg',
         // })
-    }).then(res => res.json())
+    }).then(res => console.log(res))
         .then(response => console.log('Success:', JSON.stringify(response)))
         .catch(error => console.error('Error:', error));
 
