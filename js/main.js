@@ -107,7 +107,7 @@ function sendPicture() {
         headers: {
             "Content-Type": "application/json",
             "Access-Control-Allow-Origin": "*",
-            "cache-control", "no-cache",
+            "cache-control": "no-cache",
             "Accept": "application/json",
             "Authorization": "Basic Og==",
             "postman-token", "44a260fc-db86-3ffc-ab77-e8229fa5e1b0"
