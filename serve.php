@@ -19,5 +19,5 @@ $result = file_get_contents($url, false, $context);
 if ($result === FALSE) { /* Handle error */ }
 
 
-
+return 'test';
 return $result;
