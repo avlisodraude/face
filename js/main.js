@@ -79,26 +79,19 @@ function sendPicture() {
 
 
     console.log('within postdata');
-    var data = new FormData();
-    data.append("username", "Beeldengeluid");
-    data.append("password", "Jkf738%^dg");
+    fetch('./serve.php', {
+        method: 'post',
+        headers: {
+            "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+        },
+        body: 'username=Beeldengeluid&password=Jkf738%^dg'
+    })
+        .then(res => console.log(res))
+        .catch(function (error) {
+            console.log('Request failed', error);
+        });
 
-    var xhr = new XMLHttpRequest();
-    xhr.withCredentials = true;
 
-    xhr.addEventListener("readystatechange", function () {
-        if (this.readyState === 4) {
-            console.log(this.responseText);
-        }
-    });
-
-    xhr.open("POST", "http://3.120.127.207/api/login/");
-    xhr.setRequestHeader("authorization", "Basic Og==");
-    xhr.setRequestHeader("cache-control", "no-cache");
-    xhr.setRequestHeader("postman-token", "b19cc681-ac7e-6664-f02a-e3fbeb08a201");
-
-    xhr.send(data);
-    console.log(data)
 
 }
 
