@@ -110,7 +110,7 @@ function sendPicture() {
             "cache-control": "no-cache",
             "Accept": "application/json",
             "Authorization": "Basic Og==",
-            "postman-token", "44a260fc-db86-3ffc-ab77-e8229fa5e1b0"
+            "postman-token": "44a260fc-db86-3ffc-ab77-e8229fa5e1b0"
         },
         mode: 'no-cors',
         body: JSON.stringify({
