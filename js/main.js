@@ -100,23 +100,24 @@ function sendPicture() {
     console.log('within postdata')
     // Default options are marked with *
 
-    fetch('http://3.120.127.207/api/login/',
+    fetch('./serve.php',
         {
-        method: 'POST',
-        credentials: 'include',
-        headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
-            "cache-control": "no-cache",
-            "Accept": "application/json",
-            "Authorization": "Basic Og==",
-            "postman-token": "44a260fc-db86-3ffc-ab77-e8229fa5e1b0"
-        },
-        mode: 'no-cors',
-        body: JSON.stringify({
-            username: 'Beeldengeluid',
-            password: 'Jkf738%^dg',
-        })
+
+        // method: 'POST',
+        // credentials: 'include',
+        // headers: {
+        //     "Content-Type": "application/json",
+        //     "Access-Control-Allow-Origin": "*",
+        //     "cache-control": "no-cache",
+        //     "Accept": "application/json",
+        //     "Authorization": "Basic Og==",
+        //     "postman-token": "44a260fc-db86-3ffc-ab77-e8229fa5e1b0"
+        // },
+        // mode: 'no-cors',
+        // body: JSON.stringify({
+        //     username: 'Beeldengeluid',
+        //     password: 'Jkf738%^dg',
+        // })
     }).then(res => res.json())
         .then(response => console.log('Success:', JSON.stringify(response)))
         .catch(error => console.error('Error:', error));
