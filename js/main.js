@@ -78,30 +78,27 @@ function postData(url = '', data = {}) {
 function sendPicture() {
 
 
-    console.log('within postdata')
-    var form = new FormData();
-    form.append("username", "Beeldengeluid");
-    form.append("password", "Jkf738%^dg");
+    console.log('within postdata');
+    var data = new FormData();
+    data.append("username", "Beeldengeluid");
+    data.append("password", "Jkf738%^dg");
 
-    var settings = {
-        "async": true,
-        "crossDomain": true,
-        "url": "http://3.120.127.207/api/login/",
-        "method": "POST",
-        "headers": {
-            "authorization": "Basic Og==",
-            "cache-control": "no-cache",
-            "postman-token": "9a7a1469-4b63-2054-56a1-1d301f545970"
-        },
-        "processData": false,
-        "contentType": false,
-        "mimeType": "multipart/form-data",
-        "data": form
-    }
+    var xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
 
-    $.ajax(settings).done(function (response) {
-        console.log(response);
+    xhr.addEventListener("readystatechange", function () {
+        if (this.readyState === 4) {
+            console.log(this.responseText);
+        }
     });
+
+    xhr.open("POST", "http://3.120.127.207/api/login/");
+    xhr.setRequestHeader("authorization", "Basic Og==");
+    xhr.setRequestHeader("cache-control", "no-cache");
+    xhr.setRequestHeader("postman-token", "b19cc681-ac7e-6664-f02a-e3fbeb08a201");
+
+    xhr.send(data);
+    console.log(data)
 
 }
 
